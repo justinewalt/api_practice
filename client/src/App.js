@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Products from './components/Products';
 import { Grid } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
