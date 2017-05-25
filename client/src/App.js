@@ -1,5 +1,6 @@
 import React from 'react';
 import Products from './components/Products';
+import Tweets from './components/Tweets';
 import { Grid } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
@@ -9,6 +10,9 @@ const App = () => (
       <Grid.Row>
         <Grid.Column computer={8} tablet={16} mobile={16}>
           <Products />
+        </Grid.Column>
+        <Grid.Column computer={8} tablet={16} mobile={16}>
+          <Tweets />
         </Grid.Column>
       </Grid.Row>
     </Grid>

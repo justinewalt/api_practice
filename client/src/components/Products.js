@@ -93,7 +93,7 @@ class Products extends Component {
         </Form>
         <br />
         <Button basic color='blue' fluid onClick={ this.getProducts }>
-          Get Products
+          Show Products
         </Button>
         <Table celled>
           <Table.Header>
