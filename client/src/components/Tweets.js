@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Table, Header, Form, List, Icon } from 'semantic-ui-react';
+import { Header, Form, List, Icon, Card, Image } from 'semantic-ui-react';
+import moment from 'moment';
 
 class Tweets extends Component {
   state = { tweets: [], handle: '' };
@@ -19,14 +20,31 @@ class Tweets extends Component {
   tweets = () => {
     // display the UI for the tweets in state
     return this.state.tweets.map( tweet => {
-      let url = tweet.entities.media[0].media_url    
       return(
-        <Table.Row key={ tweet.id }>
-          <Table.Cell>{ tweet.text }</Table.Cell>
-          <Table.Cell>{ tweet.favorite_count }</Table.Cell>
-          <Table.Cell>{ tweet.retweet_count }</Table.Cell>
-          <Table.Cell>{ tweet.created_at }</Table.Cell>
-        </Table.Row>
+        <Card key={ tweet.id }>
+          {/*if (tweet.entities.media[0].media_url) {
+            let url = tweet.entities.media[0].media_url    
+            return( <Image src='url' />
+            )
+          } else {
+            
+          }*/}
+          <Card.Content>
+            <Card.Header> {moment(tweet.created_at).format('llll')} </Card.Header> 
+            <Card.Meta> Joined in 2016 </Card.Meta> 
+            <Card.Description> {tweet.text} </Card.Description> 
+          </Card.Content> 
+          <Card.Content extra>
+            <a>
+              <Icon name='users' />
+                {tweet.retweet_count} 
+            </a>
+            <a>
+              <Icon name='like' />
+                {tweet.favorite_count}
+            </a>
+          </Card.Content> 
+        </Card>
       );
     });
   }
